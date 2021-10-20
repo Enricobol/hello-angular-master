@@ -5,6 +5,7 @@ import { CourseDetailsListComponent } from './courses/course-deatails-list/cours
 import { CourseListComponent } from './courses/course-list/course-list.component';
 import { EditionAddComponent } from './edition/edition-add/edition-add.component';
 import { HomeComponent } from './home/home.component';
+import { StudentAddComponent } from './student/student-add/student-add.component';
 import { StudentDetailsListComponent } from './student/student-deatails-list/student-details-list.component';
 import { StudentListComponent } from './student/student-list/student-list.component';
 
@@ -15,6 +16,8 @@ const routes: Routes = [
   { path: 'courses', component: CourseListComponent, data: { animationState: 'Three' } },
 
   { path: 'students', component: StudentListComponent, data: { animationState: 'Two' } },
+
+  { path: 'addstudents/:id', component: StudentAddComponent, data: { animationState: 'Add' } },
 
   { path: 'addcourse/:id', component: CourseAddComponent, data: { animationState: 'Add' } },
   

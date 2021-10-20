@@ -25,6 +25,7 @@ export class CourseAddComponent implements OnInit {
     this.course.level = Level.INTERMEDIATE;
   }
 
+  //All'inizializzazione
   ngOnInit(): void {
     this.id=Number(this.route.snapshot.paramMap.get('id'));
     this.service.getAreas()

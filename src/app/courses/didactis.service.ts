@@ -21,7 +21,7 @@ export class DidactisService {
     this.http = http;
   }
 
-
+  //METODO PRENDI CORSI
   getCourses(): Observable<Course[]>{
     return this.http.get<Course[]>(this.courseUrl)
             .pipe( tap(data => console.log(JSON.stringify(data))),
@@ -29,7 +29,7 @@ export class DidactisService {
             );
   }
 
-
+  //METODO PRENDI CORSO PER ID
   getCourseById(id:Number): Observable<Course>{
     return this.http.get<Course>(`${this.courseUrl}/${id}`)
             .pipe( tap(data => console.log(JSON.stringify(data))),
@@ -45,7 +45,7 @@ export class DidactisService {
             );
   }
 
-
+  //CREA CORSO
   createCourse(course:Course):Observable<Course>{
     const hs = new HttpHeaders({
       "Content-Type": "application/json"
@@ -55,7 +55,7 @@ export class DidactisService {
                     catchError(this.handleError));
   }
 
-
+  //AGGIORNA CORSO
   updateCourse(course:Course):Observable<Course>{
     const hs = new HttpHeaders({
       "Content-Type": "application/json"
@@ -65,13 +65,14 @@ export class DidactisService {
                     catchError(this.handleError));
   }
 
-
+  //METODO ELIMINA CORSO
   deleteCourse(id: number):Observable<Course>{
     return this.http.delete<Course>(`${this.courseUrl}/${id}`)
                     .pipe( tap(data => console.log(JSON.stringify(data))),
                     catchError(this.handleError));
   }
 
+  //PRENDI EDIZIONE DAL ID CORSO 
 getEditionsByCourseId(id: number):Observable<CourseEdition[]>{
   return this.http.get<CourseEdition[]>(`${this.courseEditionUrl}/course/${id}`)
             .pipe( tap(data => console.log(JSON.stringify(data))),

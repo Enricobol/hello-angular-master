@@ -12,6 +12,8 @@ import { StudentDetailsListComponent } from './student/student-deatails-list/stu
 import { CourseAddComponent } from './courses/course-add/course-add.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditionAddComponent } from './edition/edition-add/edition-add.component';
+import { StudentAddComponent } from './student/student-add/student-add.component';
+
 
 @NgModule({
   declarations: [
@@ -21,6 +23,7 @@ import { EditionAddComponent } from './edition/edition-add/edition-add.component
     CourseListComponent,
     CourseDetailsListComponent,
     StudentDetailsListComponent,
+    StudentAddComponent,
     CourseAddComponent,
     EditionAddComponent,
 
