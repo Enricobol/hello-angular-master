@@ -22,6 +22,7 @@ export class EditionAddComponent implements OnInit {
     });
   }
 
+  
   ngOnInit(): void {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
     this.editionForm = this.fb.group({
