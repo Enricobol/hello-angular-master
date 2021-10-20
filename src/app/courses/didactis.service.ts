@@ -20,24 +20,32 @@ export class DidactisService {
   constructor(private http: HttpClient){
     this.http = http;
   }
+
+
   getCourses(): Observable<Course[]>{
     return this.http.get<Course[]>(this.courseUrl)
             .pipe( tap(data => console.log(JSON.stringify(data))),
             catchError(this.handleError)
             );
   }
+
+
   getCourseById(id:Number): Observable<Course>{
     return this.http.get<Course>(`${this.courseUrl}/${id}`)
             .pipe( tap(data => console.log(JSON.stringify(data))),
             catchError(this.handleError)
             );
   }
+
+
   getAreas() : Observable<Area[]>{ 
     return this.http.get<Area[]>(`${this.courseUrl}/areas`)
             .pipe( tap(data => console.log(JSON.stringify(data))),
             catchError(this.handleError)
             );
   }
+
+
   createCourse(course:Course):Observable<Course>{
     const hs = new HttpHeaders({
       "Content-Type": "application/json"
@@ -46,6 +54,8 @@ export class DidactisService {
                     .pipe( tap(data => console.log(JSON.stringify(data))),
                     catchError(this.handleError));
   }
+
+
   updateCourse(course:Course):Observable<Course>{
     const hs = new HttpHeaders({
       "Content-Type": "application/json"
@@ -54,6 +64,8 @@ export class DidactisService {
                     .pipe( tap(data => console.log(JSON.stringify(data))),
                     catchError(this.handleError));
   }
+
+
   deleteCourse(id: number):Observable<Course>{
     return this.http.delete<Course>(`${this.courseUrl}/${id}`)
                     .pipe( tap(data => console.log(JSON.stringify(data))),
@@ -66,6 +78,7 @@ getEditionsByCourseId(id: number):Observable<CourseEdition[]>{
             catchError(this.handleError)
             );
 }
+
 getTeachers():Observable<Teacher[]>{
   return this.http.get<Teacher[]>(this.teacherUrl)
                   .pipe( tap(data => console.log(JSON.stringify(data))),
