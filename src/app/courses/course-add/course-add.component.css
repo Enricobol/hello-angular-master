@@ -39,3 +39,14 @@ label{
     margin: 0 30px;
     background-color: #1b36a1;
 }
+
+.checkarea{
+    display: flex;
+    align-items: center;
+    
+   
+}
+.form-check-input{
+    margin-top: 13px;
+    margin-left: 15px;
+}
