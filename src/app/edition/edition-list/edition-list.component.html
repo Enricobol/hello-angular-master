@@ -1,0 +1,40 @@
+<div class="container_list">
+    <div class="addedition">
+      <button class="btnaddcourse" [routerLink]="['/addedition', 0]"><i class="fas fa-plus"></i> Add edition</button>
+    </div>
+    <div class="table">
+      <table>
+        <thead class="thead">
+          <tr>
+            <th scope="col">ID</th>
+            <th scope="col">Codice</th>
+            <th scope="col">Titolo Corso</th>
+            <th scope="col">Prezzo</th>
+            <th scope="col">Azioni</th>
+          </tr>
+        </thead>
+
+        <tbody class="tbody">
+        
+
+          <tr  *ngFor="let e of detailsEditions">
+           <td>{{e.id}}</td>
+           <td>{{e.code}}</td>
+           <td>{{e.courseTitle}}</td>
+           <td>{{e.realPrice}}</td>
+            <td >
+              <div class="btn_div"  aria-label="Basic example">
+                <button type="button" class="btn btn-primary"  [routerLink]="['/editiondetails', e.id]">Info</button>
+                <button type="button" class="btn btn-warning" [routerLink]="['/addedition', e.id]">Modify</button>
+                <button type="button" class="btn btn-danger" (click)="clickMethod(e.id)">Elimina</button>
+              </div>
+            </td> 
+          </tr>
+          
+        
+        
+        </tbody>
+      </table>
+    </div>
+  </div>
+  

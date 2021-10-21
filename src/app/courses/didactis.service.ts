@@ -5,6 +5,7 @@ import { catchError, tap } from "rxjs/operators";
 import { CourseEdition } from 'src/app/DTOs/edition';
 import { Area } from "../DTOs/area";
 import { Course } from "../DTOs/course";
+import { DetailsEdition } from "../DTOs/editionDetails";
 import { Teacher } from "../DTOs/teacher";
 
 
@@ -37,7 +38,7 @@ export class DidactisService {
             );
   }
 
-
+  //PRENDI AREA
   getAreas() : Observable<Area[]>{ 
     return this.http.get<Area[]>(`${this.courseUrl}/areas`)
             .pipe( tap(data => console.log(JSON.stringify(data))),
@@ -80,6 +81,7 @@ getEditionsByCourseId(id: number):Observable<CourseEdition[]>{
             );
 }
 
+//PRENDI INSEGNANTE
 getTeachers():Observable<Teacher[]>{
   return this.http.get<Teacher[]>(this.teacherUrl)
                   .pipe( tap(data => console.log(JSON.stringify(data))),
@@ -87,6 +89,7 @@ getTeachers():Observable<Teacher[]>{
                   );
 }
 
+//CREA EDIZIONE
 createEdition(edition:CourseEdition):Observable<CourseEdition>{
   const hs = new HttpHeaders({
     "Content-Type": "application/json"
@@ -97,6 +100,22 @@ createEdition(edition:CourseEdition):Observable<CourseEdition>{
   );
 }
 
+//ELIMINA EDIZIONE
+deleteEdition(id: number):Observable<DetailsEdition>{
+  return this.http.delete<DetailsEdition>(`${this.courseEditionUrl}/${id}`)
+                  .pipe( tap(data => console.log(JSON.stringify(data))),
+                  catchError(this.handleError));
+}
+
+  //METODO PRENDI EDIZIONI
+  getEditions(): Observable<DetailsEdition[]>{
+    return this.http.get<DetailsEdition[]>(this.courseEditionUrl)
+            .pipe( tap(data => console.log(JSON.stringify(data))),
+            catchError(this.handleError)
+            );
+  }
+
+//Errore
   private handleError(errorResponse:HttpErrorResponse) : Observable<never>{ //lancia un'eccezione
     let errorMessage = '';
     if (errorResponse.error instanceof ErrorEvent) {

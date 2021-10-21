@@ -13,6 +13,7 @@ import { CourseAddComponent } from './courses/course-add/course-add.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditionAddComponent } from './edition/edition-add/edition-add.component';
 import { StudentAddComponent } from './student/student-add/student-add.component';
+import { EditionListComponent } from './edition/edition-list/edition-list.component';
 
 
 @NgModule({
@@ -26,6 +27,7 @@ import { StudentAddComponent } from './student/student-add/student-add.component
     StudentAddComponent,
     CourseAddComponent,
     EditionAddComponent,
+    EditionListComponent,
 
   ],
   imports: [
