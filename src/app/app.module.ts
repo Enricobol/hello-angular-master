@@ -14,6 +14,8 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EditionAddComponent } from './edition/edition-add/edition-add.component';
 import { StudentAddComponent } from './student/student-add/student-add.component';
 import { EditionListComponent } from './edition/edition-list/edition-list.component';
+import { EditionAddToListComponent } from './edition/edition-add-to-list/edition-add-to-list.component';
+import { EditionDetailsListComponent } from './edition/edition-details-list/edition-details-list.component';
 
 
 @NgModule({
@@ -28,6 +30,8 @@ import { EditionListComponent } from './edition/edition-list/edition-list.compon
     CourseAddComponent,
     EditionAddComponent,
     EditionListComponent,
+    EditionAddToListComponent,
+    EditionDetailsListComponent,
 
   ],
   imports: [

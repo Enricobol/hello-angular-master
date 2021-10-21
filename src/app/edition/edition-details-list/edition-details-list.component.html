@@ -1,0 +1,52 @@
+<div class="student_card" *ngIf="edition">
+    <a (click)="onBack()" class="previous">&laquo;</a>
+
+    <!-- ID -->
+    <div class="input-group">
+        <span class="input-group-text" id="basic-addon1">ID</span>
+        <span class="info"> {{ edition.id }}</span>
+    </div>
+
+    <!-- CODE -->
+    <div class="input-group">
+        <span class="input-group-text" id="basic-addon1">Codice</span>
+        <span class="info"> {{ edition.code }}</span>
+    </div>
+
+    <!-- DESCRIPTION -->
+    <div class="input-group">
+        <span class="input-group-text" id="basic-addon1">Descrizione</span>
+        <span class="info"> {{ edition.description }}</span>
+    </div>
+
+    <!-- START DATE -->
+    <div class="input-group">
+        <span class="input-group-text" id="basic-addon1">Data Inizio</span>
+        <span class="info"> {{ edition.startDate }}</span>
+    </div>
+
+    <!-- END DATE -->
+    <div class="input-group">
+        <span class="input-group-text" id="basic-addon1">Data Fine</span>
+        <span class="info"> {{ edition.finalizationDate }}</span>
+    </div>
+
+    <!-- PRICE -->
+    <div class="input-group">
+        <span class="input-group-text" id="basic-addon1">Prezzo</span>
+        <span class="info"> {{ edition.realPrice }}</span>
+    </div>
+
+    <!-- TITOLO -->
+    <div class="input-group">
+        <span class="input-group-text" id="basic-addon1">Titolo Corso</span>
+        <span class="info"> {{ edition.courseTitle }}</span>
+    </div>
+
+    <!-- NOME ISTRUTTORE -->
+    <div class="input-group">
+        <span class="input-group-text" id="basic-addon1">Istruttore</span>
+        <span class="info"> {{ edition.instructorFullName }}</span>
+    </div>
+    
+</div>

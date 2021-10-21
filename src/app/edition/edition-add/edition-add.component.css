@@ -1,4 +1,15 @@
 
+.container_AddCourse{
+    float: right;
+    width: calc(100vw - 250px);
+    height: 100%;
+  
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30px;
+}
+
 label{
     color: white;
 }

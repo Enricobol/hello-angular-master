@@ -1,38 +1,3 @@
-<div class="container_course_details app2" id="main">
-    <!--<div class="myborder"></div>
-    <table class="table table-dark table-striped table-hover"
-        style="width: 100%; user-select: none; -moz-user-select: none;">
-        <thead>
-            <th scope="col">id</th>
-            <th scope="col">title</th>
-            <th scope="col">description</th>
-            <th scope="col">duration</th>
-            <th scope="col">base price</th>
-            <th scope="col">grants certification</th>
-        </thead>
-        <tbody>
-            <tr>
-                <td>{{ singleCourse.id }}</td>
-                <td>{{ singleCourse.title }}</td>
-                <td>{{ singleCourse.description }}</td>
-                <td>{{ singleCourse.duration }}</td>
-                <td>{{ singleCourse.basePrice }}</td>
-                <td>{{ singleCourse.grantsCertification }}</td>
-                <td style="text-align: right;">
-                    <div class="btn-group" role="group" aria-label="Basic example">
-                        <button type="button" class="btn btn-warning">Modify</button>
-                        <button type="button" class="btn btn-danger">Delete</button>
-                    </div>
-                </td>
-            </tr>
-        </tbody>
-    </table>
-    <div class="myborder"></div>-->
-</div>
-
-<div class="image_card">
-    <img src="\assets\imagines\online-course.png" alt="Logo" class="responsive-img" style="width: 200px;">
-</div>
 
 <div class="course_card" *ngIf="course">
     <a (click)="onBack()" class="previous">&laquo;</a>
@@ -98,7 +63,7 @@
         <button class="btn btn-primary" [routerLink]="['/addedition', course.id]">Add</button>
     </div>
 
-    <table class="table table-dark table-striped table-hover"
+    <table class="table table-striped table-hover"
     style="width: 90%; user-select: none; -moz-user-select: none;">
     <thead>
       <tr>

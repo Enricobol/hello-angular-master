@@ -25,6 +25,7 @@ export class EditionAddComponent implements OnInit {
   //All'inizio
   ngOnInit(): void {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
+
     this.editionForm = this.fb.group({
       code: ['', Validators.required ],
       description: ['', Validators.required ],
@@ -33,11 +34,13 @@ export class EditionAddComponent implements OnInit {
       instructorId: [0, Validators.required ],
       courseId: [this.id, Validators.required ]
     });
+
     this.courseService.getTeachers()
     .subscribe({
       next: t => {this.teachers = t; },
       error: error => console.log(error)
     });
+    
     this.courseService.getCourses()
     .subscribe({
       next: t => {

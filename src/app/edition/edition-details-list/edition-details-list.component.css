@@ -21,7 +21,7 @@ cursor: pointer;
 .student_card{
   width: 1000px;
   height: 1000px;
-  background-color: rgba(183, 253, 169, 0.452);
+  background-color: rgba(236, 169, 253, 0.452);
   display:inline;
   float:left;
   margin-left:250px;
@@ -35,7 +35,7 @@ cursor: pointer;
 text-align: center;
 width: 250px;
 height: 1000px;
-background-color:rgb(54, 121, 52);
+background-color:rgb(180, 117, 172);
 margin-left:50px;
 display:inline;
 position: relative;

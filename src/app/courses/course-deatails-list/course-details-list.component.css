@@ -14,10 +14,11 @@
 }
 .course_card{
   width: 1000px;
-  height: 1000px;
-  background-color: white;
+  height: 1100px;
+  background-color: rgba(223, 226, 255, 0.438);
   display:inline;
   float:left;
+  margin-left:250px;
   border-top-right-radius: 30px;
   border-bottom-right-radius: 30px;
   -moz-box-shadow: 10px 10px 5px #888;
@@ -66,8 +67,8 @@ a:hover {
 }
 
 .previous {
-  background-color: black;
-  color: white;
+  background-color: rgb(0, 0, 255);
+  color: rgb(255, 254, 254);
 }
 .input-group{
   margin-left: 50px;
