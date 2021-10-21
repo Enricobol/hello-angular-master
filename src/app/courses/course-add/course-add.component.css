@@ -25,3 +25,15 @@ label{
 
    
 }
+
+.btn_send,.btn_back{
+    
+    width: 140px;
+    height: 50px;
+    background-color: #2950e6;
+    color:white;
+}
+.btn_back{
+    margin: 0 30px;
+    background-color: #1b36a1;
+}
