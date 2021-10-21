@@ -13,6 +13,7 @@ import { DidactisService } from '../didactis.service';
   export class StudentDetailsListComponent implements OnInit {
 
     student : Student | undefined;
+    
 
     constructor(private studentService: DidactisService, private router:Router, private route:ActivatedRoute){
     }
