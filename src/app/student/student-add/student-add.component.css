@@ -1,38 +1,43 @@
+.container_student_add {
+  float: right;
+  width: calc(100vw - 250px);
+  height: 100%;
 
-label{
-    color: white;
-}
-.submit{
-    background-color: violet;
-    border-radius: 0px;
-}
-.myshadow{
-    -moz-box-shadow: 10px 10px 5px #888;
-    -webkit-box-shadow: 10px 10px 5px #888;
-    box-shadow: 5px 5px 5px black;
-}
-.btn-info{
-    width: 600px;
-    height: 50px;
-    margin-left: 5%;
-    margin-top: 50px;
-}
-.btn-info:hover{
-    -moz-box-shadow: 10px 10px 5px #888;
-    -webkit-box-shadow: 10px 10px 5px #888;
-    box-shadow: 15px 25px 20px rgb(27, 27, 27);
-    transform: translateY(-3px);
-}
-.btn-warning:hover{
-    -moz-box-shadow: 10px 10px 5px #888;
-    -webkit-box-shadow: 10px 10px 5px #888;
-    box-shadow: 15px 25px 20px rgb(27, 27, 27);
-    transform: translateY(-3px);
-}
-.btn-warning{
-    width: 600px;
-    height: 50px;
-    margin-left: 25%;
-    margin-top: 50px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 30px;
 }
 
+form {
+  width: 80%;
+}
+
+label {
+  margin-top: 20px;
+}
+
+.invalid-feedback {
+  position: absolute;
+}
+
+.checkarea {
+  display: flex;
+  align-items: center;
+}
+
+.form-check-input {
+  margin-left: 20px;
+  margin-top: 15px;
+}
+.btn_send,
+.btn_back {
+  width: 140px;
+  height: 50px;
+  background-color: #2950e6;
+  color: white;
+}
+.btn_back {
+  margin: 0 30px;
+  background-color: #1b36a1;
+}
