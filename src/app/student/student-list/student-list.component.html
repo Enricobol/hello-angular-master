@@ -1,19 +1,20 @@
-<div class="container app2" id="main">
-  <button class="btn btn-primary mb-3 ms-3" [routerLink]="['/addstudents', 0]" style="width: 200px;">Aggiungi Studente</button>
+<div class="container_studentlist" id="main">
+  <button class="btnaddstudent" [routerLink]="['/addstudents', 0]" style="width: 200px;"><i class="fas fa-plus"></i> Aggiungi Studente</button>
   <div class="myborder"></div>
-    <table class="table table-dark table-striped table-hover" 
-      id="table" style="width: 100%; user-select: none; -moz-user-select: none;">
-      <thead>
+    <table class="table" 
+      id="table">
+      <thead class="thead">
         <tr>
-          <th scope="col">id</th>
-          <th scope="col">Nome</th>
-          <th scope="col">Cognome</th>
+          <th scope="col">ID</th>
+          <th scope="col">Name</th>
+          <th scope="col">Surname</th>
           <th scope="col">Email</th>
           <th scope="col">Address</th>
-          <th scope="col"></th>
+          <th scope="col">Actions</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody class="tbody">
+        
         <tr *ngFor="let s of students">
           <td>{{ s.id }}</td>
           <td>{{ s.firstname }}</td>
@@ -21,13 +22,14 @@
           <td>{{ s.email }}</td>
           <td>{{ s.address }}</td>
           <td style="text-align: right;">
-            <div class="btn-group" role="group" aria-label="Basic example">
+            <div class="btn_div" role="group" aria-label="Basic example">
               <button type="button" class="btn btn-primary" [routerLink]="['/studentdetails', s.id]">Info</button>
               <button type="button" class="btn btn-warning" [routerLink]="['/addstudents', s.id]">Modifica</button>
               <button type="button" class="btn btn-danger" (click)="clickMethod(s.id)">Elimina</button>
             </div>
           </td>
         </tr>
+      
       </tbody>
     </table>
     <div class="myborder"></div>
