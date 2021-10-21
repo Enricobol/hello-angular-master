@@ -1,27 +1,76 @@
-<nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-    <div class="container-fluid">
-        <a class="navbar-brand" href="#">Navbar</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" routerLink="/home">Home</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" routerLink="/students">Students</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" routerLink="/courses" id="course">Courses</a>
-                </li> 
-            </ul>
-        </div>
+<aside class="sidebar position-fixed top-0 left-0 overflow-auto h-100 float-left" id="show-side-navigation1">
+    <i class="uil-bars close-aside d-md-none d-lg-none" data-close="show-side-navigation1"></i>
+    <div class="sidebar-header d-flex justify-content-center align-items-center px-3 py-4">
+      <img
+           class="rounded-pill img-fluid"
+           width="65"
+           src="https://uniim1.shutterfly.com/ng/services/mediarender/THISLIFE/021036514417/media/23148907008/medium/1501685726/enhance"
+           alt="">
+      <div class="ms-2">
+        <h5 class="fs-6 mb-0">
+          <a class="text-decoration-none" routerLink="#">Max D.</a>
+        </h5>
+        <p class="mt-1 mb-0">Students and College Manager</p>
+      </div>
     </div>
-</nav>
-<div class="background"></div>
-<div class="background2"></div>
-<div [@triggerName]="prepareRoute(outlet)"> 
+  
+    <div class="search position-relative text-center px-4 py-3 mt-2">
+      <input type="text" class="form-control w-100 border-0  inputfield" placeholder="Search here..." >
+      <i class="fa fa-search position-absolute d-block fs-6"></i>
+    </div>
+  
+    <ul class="categories list-unstyled">
+      <li class="" >
+        <i class="uil-estate fa-fw"></i><a routerLink="/home"> Dashboard</a>
+       
+      </li>
+      <li class="" >
+        <i class="uil-folder"></i><a routerLink="/students">Students</a>
+      </li>
+      <li class="" >
+        <i class="uil-calendar-alt"></i><a routerLink="/courses" > Course</a>
+       
+      </li>
+      <li class="">
+        <i class="uil-calendar-alt"></i><a routerLink="#"> Calender</a>
+       
+      </li>
+      <li class="">
+        <i class="uil-envelope-download fa-fw"></i><a routerLink="#"> Mailbox</a>
+      
+      </li>
+     
+      <li class="">
+        <i class="uil-bag"></i><a routerLink="#"> Projects</a>
+       
+      </li>
+      <li class="">
+        <i class="uil-setting"></i><a routerLink="#"> Settings</a>
+
+      </li>
+      <li class="">
+        <i class="uil-chart-pie-alt"></i><a routerLink="#"> Components</a>
+      
+      </li>
+      <li class="">
+        <i class="uil-panel-add"></i><a routerLink="#"> Charts</a>
+      
+      </li>
+      <li class="">
+        <i class="uil-map-marker"></i><a routerLink="#"> Maps</a>
+      </li>
+    </ul>
+  </aside>
+  <div [@triggerName]="prepareRoute(outlet)"> 
     <router-outlet #outlet="outlet"></router-outlet>
-</div>
+    </div>
+
+
+
+
+
+
+
+
+
+

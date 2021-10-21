@@ -1,20 +1,16 @@
-
-h1{
-  color: black;
-  text-align: center;
-  line-height: 130px;
+.home_container{
+  font-family: "roboto";
+  float: right;
+  width: calc(100vw - 250px);
+  height: 100vh;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  padding-top: 20px;
  
-  
 }
-.app2{
-  margin-top:60px;
-  padding: 30px;
-  padding-bottom: 0px;
-  height: 200px;
-  width: 1000px;
-  border-radius: 30px;
-  background-color: rgb(220, 220, 220);
-  -moz-box-shadow: 10px 10px 5px #888;
-    -webkit-box-shadow: 10px 10px 5px #888;
-    box-shadow: 15px 25px 20px rgb(27, 27, 27);
+
+.title{
+  font-weight: bold;
+  font-size: 50px;
 }
