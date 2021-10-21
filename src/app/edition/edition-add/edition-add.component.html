@@ -1,31 +1,36 @@
 <div class="container mt-5">
     <form novalidate (ngSubmit)="save()" [formGroup]="editionForm">
-        <label for="code"class="form-label">Code</label>
+
+            <!-- Code -->
+            <label for="code"class="form-label">Code</label>
             <input type="text" class="form-control myshadow" id="code" name="code" formControlName="code"
                 [ngClass]="{'is-invalid': checkValid('code')}">
             <span *ngIf="checkValid('code')" class="invalid-feedback">
                 <span *ngIf="checkRequired('code')">Codice edizione obbligatorio</span>
             </span>
-
+            
+            <!-- Descrizione -->
             <label for="description"class="form-label">Description</label>
             <input type="text" class="form-control myshadow" id="description" name="description" formControlName="description"
                 [ngClass]="{'is-invalid': checkValid('description')}">
             <span *ngIf="checkValid('description')" class="invalid-feedback">
-                <span *ngIf="checkRequired('description')">Descrizione obbligatorio</span>
+                <span *ngIf="checkRequired('description')">Descrizione obbligatoria</span>
             </span>
 
+            <!-- Prezzo -->
             <label for="realPrice"class="form-label">Prezzo</label>
             <input type="number" class="form-control myshadow" id="realPrice" name="realPrice" formControlName="realPrice"
                 [ngClass]="{'is-invalid': checkValid('realPrice') }">
             <span *ngIf="checkValid('realPrice')" class="invalid-feedback">
-                <span *ngIf="checkRequired('realPrice')">prezzo obbligatorio</span>
+                <span *ngIf="checkRequired('realPrice')">Prezzo obbligatorio</span>
             </span>
 
+            <!-- data inizio -->
             <label for="startDate"class="form-label">Data di inizio</label>
             <input type="date" class="form-control myshadow" id="startDate" name="startDate" formControlName="startDate"
                 [ngClass]="{'is-invalid': checkValid('startDate') }">
             <span *ngIf="checkValid('startDate')" class="invalid-feedback">
-                <span *ngIf="checkRequired('startDate')">data inizio obbligatorio</span>
+                <span *ngIf="checkRequired('startDate')">Data inizio obbligatorio</span>
             </span>
 
            <!-- docente + corso-->
@@ -44,7 +49,7 @@
                 <input type="submit" class="btn btn-info"value="invia"
                         [title]="editionForm.valid? 'Crea edizione' : 'Disabilitata finchè i dati non sono corretti'"
                         [disabled]="!editionForm.valid">
-                <button (click)="onBack()" class="btn btn-warning">Back</button>
+                <button (click)="onBack()" class="btn btn-warning">Indietro</button>
             </div>
     </form>
 </div>

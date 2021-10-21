@@ -22,7 +22,7 @@ export class EditionAddComponent implements OnInit {
     });
   }
 
-  
+  //All'inizio
   ngOnInit(): void {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
     this.editionForm = this.fb.group({
@@ -46,6 +46,8 @@ export class EditionAddComponent implements OnInit {
       error: error => console.log(error)
     });
   }
+
+  //Salvataggio
   save(){
     this.editionForm.value.docenteId = Number(this.editionForm.value.docenteId)
     this.editionForm.value.corsoId = Number(this.editionForm.value.corsoId)
@@ -59,6 +61,8 @@ export class EditionAddComponent implements OnInit {
         });
     console.log(this.editionForm.value)
   }
+
+  //Ritorna
   onBack(): void{
     this.router.navigate(["/coursedetails/"+this.id])
   }
