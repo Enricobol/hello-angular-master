@@ -67,7 +67,9 @@
 	top: 22px;
    
 }
-
+.fa{
+	margin-top: 3px;
+}
 .inputfield{
     outline: none;
     color:white;
