@@ -1,33 +1,69 @@
 <div class="container app2" id="main">
+
 </div>
 
 <div class="image_card">
-    <img src="\assets\imagines\user.png" alt="STOCAZZO" class="responsive-img" style="width: 200px;">
+    <img src="\assets\imagines\user.png" alt="userLogo" class="responsive-img" style="width: 200px;">
 </div>  
-<div class="course_card">
-    <a routerLink="/students" class="previous">&laquo;</a>
+
+
+<div class="student_card" *ngIf="student">
+    <a (click)="onBack()" class="previous">&laquo;</a>
+     
+    <!-- ID -->
     <div class="input-group">
         <span class="input-group-text" id="basic-addon1">ID</span>
-        <input type="text" class="form-control" aria-label="Username"value={{singleStudent.id}} readonly>
+        <span class="info"> {{ student.id }}</span>
     </div>
+
+    <!-- NOME -->
     <div class="input-group">
-        <span class="input-group-text" id="basic-addon1">First name</span>
-        <input type="text" class="form-control" aria-label="Username" value={{singleStudent.firstName}} readonly>
+        <span class="input-group-text" id="basic-addon1">Nome</span>
+        <span class="info"> {{ student.firstname }}</span>
     </div>
+
+    <!-- COGNOME -->
     <div class="input-group">
-        <span class="input-group-text" id="basic-addon1">Last name</span>
-        <input type="text" class="form-control" aria-label="Username" value={{singleStudent.lastName}} readonly>
+        <span class="input-group-text" id="basic-addon1">Cognome</span>
+        <span class="info"> {{ student.surname }}</span>
     </div>
+
+    <!-- DATA NASCITA -->
     <div class="input-group">
-        <span class="input-group-text" id="basic-addon1">email</span>
-        <input type="text" class="form-control" aria-label="Username" value={{singleStudent.email}} readonly>
+        <span class="input-group-text" id="basic-addon1">Data di Nascita</span>
+        <span class="info"> {{ student.dateOfBirth }}</span>
     </div>
+
+    <!-- INDIRIZZO -->
     <div class="input-group">
-        <span class="input-group-text" id="basic-addon1">phone</span>
-        <input type="text" class="form-control" aria-label="Username" value={{singleStudent.phoneNumber}} readonly>
+        <span class="input-group-text" id="basic-addon1">Indirizzo</span>
+        <span class="info"> {{ student.address }}</span>
     </div>
+
+    <!-- CITTA -->
     <div class="input-group">
-        <span class="input-group-text" id="basic-addon1">Birth date</span>
-        <input type="check" class="form-control" aria-label="Username" value={{singleStudent.birthDate}} readonly>
+        <span class="input-group-text" id="basic-addon1">Città</span>
+        <span class="info"> {{ student.city }}</span>
     </div>
-</div> 
+
+    <!-- EMAIL -->
+    <div class="input-group">
+        <span class="input-group-text" id="basic-addon1">Email</span>
+        <span class="info"> {{ student.email }}</span>
+    </div>
+
+    <!-- TELEFONO -->
+    <div class="input-group">
+        <span class="input-group-text" id="basic-addon1">Telefono</span>
+        <span class="info"> {{student.phoneNumber}}</span>
+    </div>
+
+    <!-- EMPLOYEE -->
+    <div class="input-group">
+        <span class="input-group-text" id="basic-addon1">Impiegato</span>
+        <span class="info"> {{student.isEmployee}}</span>
+    </div>
+</div>
+
+
+<th> CIAO CIAO </th>

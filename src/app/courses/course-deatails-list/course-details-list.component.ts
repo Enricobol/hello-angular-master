@@ -32,6 +32,7 @@ import { DidactisService } from '../didactis.service';
           error: error => console.log(error)
         });
       }
+      
       let view = document.getElementById("view");
       view?.addEventListener
     }

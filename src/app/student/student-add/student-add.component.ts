@@ -29,7 +29,7 @@ export class StudentAddComponent implements OnInit {
                   .subscribe({
                     next : s =>{
                       this.student = s;
-                      //console.log(this.student);
+                      console.log(this.student);
                     },
                     error: err => console.log(err)
                 })
@@ -56,13 +56,13 @@ export class StudentAddComponent implements OnInit {
         next: s => {
           this.student = s;
           alert("Studente aggiornato con id:" + this.student.id);
-          this.router.navigate(["/student"])
+          this.router.navigate(["/students"])
         },
         error : err => console.log(err)
       });
     }  
   }
   onBack(): void{
-    this.router.navigate(["/student"])
+    this.router.navigate(["/students"])
   }
 }
