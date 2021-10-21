@@ -22,7 +22,7 @@
           <td>{{ s.address }}</td>
           <td style="text-align: right;">
             <div class="btn-group" role="group" aria-label="Basic example">
-              <button type="button" class="btn btn-primary" routerLink="/studentdetails">Info</button>
+              <button type="button" class="btn btn-primary" [routerLink]="['/studentdetails', s.id]">Info</button>
               <button type="button" class="btn btn-warning" [routerLink]="['/addstudents', s.id]">Modifica</button>
               <button type="button" class="btn btn-danger" (click)="clickMethod(s.id)">Elimina</button>
             </div>

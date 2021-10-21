@@ -22,10 +22,10 @@
 }
 .image_card{
   text-align: center;
-  width: 300px;
+  width: 250px;
   height: 1000px;
   background-color:red;
-  margin-left:300px;
+  margin-left:50px;
   display:inline;
   position: relative;
   float:left;
