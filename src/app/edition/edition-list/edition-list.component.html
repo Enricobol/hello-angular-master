@@ -24,7 +24,7 @@
            <td>{{e.realPrice}}</td>
             <td >
               <div class="btn_div"  aria-label="Basic example">
-                <button type="button" class="btn btn-primary"  [routerLink]="['/editiondetails', e.id]">Info</button> <!--Da implementare-->
+                <button type="button" class="btn btn-primary"  [routerLink]="['/editiondetails', e.id]">Info</button> 
                 <button type="button" class="btn btn-warning" [routerLink]="['/addeditiontolist', e.id]">Modifica</button>
                 <button type="button" class="btn btn-danger" (click)="clickMethod(e.id)">Elimina</button>
               </div>

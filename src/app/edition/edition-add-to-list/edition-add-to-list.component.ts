@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
+import { FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
 import { DidactisService } from 'src/app/courses/didactis.service';
 import { Course } from 'src/app/DTOs/course';
@@ -20,7 +20,7 @@ export class EditionAddToListComponent implements OnInit {
   courses: Course[] = [];
   id: number = 0;
 
-  constructor(private service: DidactisService, private fb: FormBuilder, private courseService: DidactisService, private router: Router, private route: ActivatedRoute) {
+  constructor(private service: DidactisService, private fb: FormBuilder, private router: Router, private route: ActivatedRoute) {
     this.editionForm = this.fb.group({
     });
   }
@@ -30,6 +30,7 @@ export class EditionAddToListComponent implements OnInit {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
 
     this.editionForm = this.fb.group({
+      id: this.id,
       code: ['', Validators.required],
       description: ['', Validators.required],
       startDate: ['', Validators.required],
@@ -51,14 +52,14 @@ export class EditionAddToListComponent implements OnInit {
     }
 
     //Prendi la lista di Istruttori da mettere nella select
-    this.courseService.getTeachers()
+    this.service.getTeachers()
       .subscribe({
         next: t => { this.teachers = t; },
         error: error => console.log(error)
       });
 
     //Prendi la lista di Istruttori da mettere nei corsi
-    this.courseService.getCourses()
+    this.service.getCourses()
       .subscribe({
         next: t => {
           this.courses = t;
@@ -71,6 +72,7 @@ export class EditionAddToListComponent implements OnInit {
     if (this.editionForm) {
       this.editionForm.reset();
       this.editionForm.patchValue({
+        id : this.id,
         code: this.detailsEdition.code,
         description: this.detailsEdition.description,
         startDate: this.detailsEdition.startDate,
@@ -87,7 +89,7 @@ export class EditionAddToListComponent implements OnInit {
     this.editionForm.value.corsoId = Number(this.editionForm.value.corsoId)
 
     if (this.id == 0) { //CREA EDIZIONE
-      this.courseService.createEdition(this.editionForm.value)
+      this.service.createEdition(this.editionForm.value)
         .subscribe({
           next: ce => {
             alert("Edizione creata con id: " + ce.id);
@@ -98,18 +100,19 @@ export class EditionAddToListComponent implements OnInit {
       console.log(this.editionForm.value)
     }
     else { //AGGIORNA EDIZIONE
+      console.log(this.editionForm.value)
       this.service.updateEdition(this.editionForm.value)
         .subscribe({
           next: de => {
             this.detailsEdition = de;
-            alert("corso aggiornato con id: " + this.detailsEdition.id);
+            
+            alert("Corso aggiornato con id: " + this.detailsEdition.id);
             this.router.navigate(["/editions"])
           },
           error: err => console.log(err)
         });
     }
   }
-
 
   //Ritorna
   onBack(): void {

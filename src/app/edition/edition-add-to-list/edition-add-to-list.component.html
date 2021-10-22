@@ -46,7 +46,7 @@
                 <option *ngFor="let c of courses" [value]="c.id"> {{ c.title }} </option>
             </select>
 
-           
+           <!--Pulsante invia -->
                 <input type="submit" class="btn btn_send"value="invia"
                         [title]="editionForm.valid? 'Crea edizione' : 'Disabilitata finchè i dati non sono corretti'"
                         [disabled]="!editionForm.valid">
