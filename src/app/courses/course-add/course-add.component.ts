@@ -27,7 +27,7 @@ export class CourseAddComponent implements OnInit {
 
   //All'inizializzazione
   ngOnInit(): void {
-    this.id=Number(this.route.snapshot.paramMap.get('id'));
+    this.id=Number(this.route.snapshot.paramMap.get('id')); //Prendi id
     this.service.getAreas()
                 .subscribe({
                   next: as => this.areas = as,
@@ -55,6 +55,7 @@ export class CourseAddComponent implements OnInit {
                           });
     return enumArray;
   }
+
   save(form:NgForm){
     //this.course.level = form.value
     this.course.level = Number(this.course.level)

@@ -12,17 +12,17 @@ import { routeTransitionAnimations } from './route-transition-animations';
 export class AppComponent {
   title = 'hello-angular';
   prepareRoute(outlet: RouterOutlet) {
-    return outlet && 
-      outlet.activatedRouteData && 
+    return outlet &&
+      outlet.activatedRouteData &&
       outlet.activatedRouteData['animationState'];
-   }
+  }
 }
 
 var course = document.getElementById("course")?.addEventListener('click', e => {
   let main = document.getElementById("main");
   main?.classList.add("moved")
-  
 
-});  
+
+});
 
 

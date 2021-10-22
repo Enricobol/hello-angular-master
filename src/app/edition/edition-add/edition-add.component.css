@@ -1,48 +1,39 @@
-
-.container_AddCourse{
+.container_addEdition {
     float: right;
     width: calc(100vw - 250px);
     height: 100%;
   
     display: flex;
     justify-content: center;
+    flex-direction: column;
     align-items: center;
     margin-top: 30px;
-}
+  }
+  
+  form {
+    width: 80%;
+  }
+  
+  label {
+    margin-top: 20px;
+  }
+  
+  .invalid-feedback {
+    position: absolute;
+  }
+ 
+  
 
-label{
+  .btn_send,
+  .btn_back {
+    
+    width: 140px;
+    height: 50px;
+    background-color: #2950e6;
     color: white;
-}
-.submit{
-    background-color: violet;
-    border-radius: 0px;
-}
-.myshadow{
-    -moz-box-shadow: 10px 10px 5px #888;
-    -webkit-box-shadow: 10px 10px 5px #888;
-    box-shadow: 5px 5px 5px black;
-}
-.btn-info{
-    width: 600px;
-    height: 50px;
-    margin-left: 5%;
-    margin-top: 50px;
-}
-.btn-warning{
-    width: 600px;
-    height: 50px;
-    margin-left: 25%;
-    margin-top: 50px;
-}
-.btn-info:hover{
-    -moz-box-shadow: 10px 10px 5px #888;
-    -webkit-box-shadow: 10px 10px 5px #888;
-    box-shadow: 15px 25px 20px rgb(27, 27, 27);
-    transform: translateY(-3px);
-}
-.btn-warning:hover{
-    -moz-box-shadow: 10px 10px 5px #888;
-    -webkit-box-shadow: 10px 10px 5px #888;
-    box-shadow: 15px 25px 20px rgb(27, 27, 27);
-    transform: translateY(-3px);
-}
+  }
+  .btn_back {
+    margin: 20px 30px ;
+    background-color: #1b36a1;
+  }
+  
