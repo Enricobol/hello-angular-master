@@ -1,52 +1,69 @@
+
 <div class="student_card" *ngIf="edition">
-    <a (click)="onBack()" class="previous">&laquo;</a>
-
-    <!-- ID -->
-    <div class="input-group">
-        <span class="input-group-text" id="basic-addon1">ID</span>
-        <span class="info"> {{ edition.id }}</span>
-    </div>
-
-    <!-- CODE -->
-    <div class="input-group">
-        <span class="input-group-text" id="basic-addon1">Codice</span>
-        <span class="info"> {{ edition.code }}</span>
-    </div>
-
-    <!-- DESCRIPTION -->
-    <div class="input-group">
-        <span class="input-group-text" id="basic-addon1">Descrizione</span>
-        <span class="info"> {{ edition.description }}</span>
-    </div>
-
-    <!-- START DATE -->
-    <div class="input-group">
-        <span class="input-group-text" id="basic-addon1">Data Inizio</span>
-        <span class="info"> {{ edition.startDate }}</span>
-    </div>
-
-    <!-- END DATE -->
-    <div class="input-group">
-        <span class="input-group-text" id="basic-addon1">Data Fine</span>
-        <span class="info"> {{ edition.finalizationDate }}</span>
-    </div>
-
-    <!-- PRICE -->
-    <div class="input-group">
-        <span class="input-group-text" id="basic-addon1">Prezzo</span>
-        <span class="info"> {{ edition.realPrice }}</span>
-    </div>
-
-    <!-- TITOLO -->
-    <div class="input-group">
-        <span class="input-group-text" id="basic-addon1">Titolo Corso</span>
-        <span class="info"> {{ edition.courseTitle }}</span>
-    </div>
-
-    <!-- NOME ISTRUTTORE -->
-    <div class="input-group">
-        <span class="input-group-text" id="basic-addon1">Istruttore</span>
-        <span class="info"> {{ edition.instructorFullName }}</span>
-    </div>
+   
+    <h1 class="title">Dettagli Edizione</h1>
     
+    
+
+    <form class="row g-3">
+        <!-- ID -->
+        <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">ID</label>
+            <input type="text" class="form-control" id="inputEmail4" readonly value="{{ edition.id }}">
+        </div>
+
+        <!-- CODE -->
+        <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Codice Edizione</label>
+            <input type="text" class="form-control" id="inputPassword4" readonly value="{{ edition.code }}">
+        </div>
+        
+        <!-- TITLE -->
+        <div class="col-md-6">
+            <label for="inputCity" class="form-label">Titolo Corso</label>
+            <input type="text" class="form-control" id="inputCity" readonly value="{{ edition.courseTitle }}">
+        </div>
+
+        <!-- DESCRIPTION -->
+        <div class="col-md-6">
+            <label for="inputAddress" class="form-label">Descrizione</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" readonly
+                value="{{ edition.description }}">
+            </div>
+
+        <!-- START DATE -->
+        <div class="col-6">
+            <label for="inputAddress2" class="form-label">Data di inizio</label>
+            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor"
+                readonly value="{{ edition.startDate }}">
+        </div>
+
+        <!-- END DATE -->
+        <div class="col-md-6">
+            <label for="inputCity" class="form-label">Data di termine</label>
+            <input type="text" class="form-control" id="inputCity" readonly value="{{ edition.finalizationDate  }}">
+        </div>
+
+        <!-- PRICE' -->
+        <div class="col-md-6">
+            <label for="inputCity" class="form-label">Prezzo</label>
+            <input type="text" class="form-control" id="inputCity" readonly value="{{ edition.realPrice }}">
+        </div>
+
+        <!-- NOME ISTRUTTORE -->
+        <div class="col-md-6">
+            <label for="inputCity" class="form-label">Istruttore</label>
+            <input type="text" class="form-control" id="inputCity" readonly value="{{ edition.instructorFullName }}">
+        </div>
+
+        <div class="col-12">
+            <button class="mybtn"  (click)="onBack()">Torna Indietro</button>
+        </div>
+       
+
+    </form>
+    
+
+    
+
 </div>

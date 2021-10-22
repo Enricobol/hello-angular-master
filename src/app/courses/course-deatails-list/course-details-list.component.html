@@ -1,88 +1,103 @@
-
 <div class="course_card" *ngIf="course">
-    <a (click)="onBack()" class="previous">&laquo;</a>
-
-    <div class="input-group">
-        <span class="input-group-text" id="basic-addon1">ID</span>
-        <span class="info"> {{ course.id }}</span>
-    </div>
-
-    <div class="input-group">
-        <span class="input-group-text" id="basic-addon1">Title</span>
-        <span class="info"> {{ course.title }}</span>
-    </div>
-
-    <div class="input-group">
-        <span class="input-group-text" id="basic-addon1">Description</span>
-        <span class="info">{{ course.description }}</span>
-    </div>
-
-    <div class="input-group">
-        <span class="input-group-text" id="basic-addon1">Duration</span>
-        <span class="info">{{ course.duration }}</span>
-    </div>
-
-    <div class="input-group">
-        <span class="input-group-text" id="basic-addon1">Base price</span>
-        <span class="info">{{ course.basePrice }}</span>
-    </div>
-
-    <div class="input-group">
-        <span class="input-group-text" id="basic-addon1">Syllabus</span>
-        <span class="info">{{ course.syllabus }}</span>
-    </div>
-
-    <div class="input-group">
-        <span class="input-group-text" id="basic-addon1">Level</span>
-        <span class="info">{{ course.level }}</span>
-    </div>
-
-    <div class="input-group">
-        <span class="input-group-text" id="basic-addon1">Area ID</span>
-        <span class="info">{{ course.areaId }}</span>
-    </div>
-
-    <div class="input-group">
-        <span class="input-group-text" id="basic-addon1">Area name</span>
-        <span class="info">{{ course.areaName }}</span>
-    </div>
-
-    <div class="input-group">
-        <span class="input-group-text" id="basic-addon1">Creation Date</span>
-        <span class="info">{{ course.creationDate }}</span>
-    </div>
-
-    <div class="input-group">
-        <span class="input-group-text" id="basic-addon1">Grants certifications</span>
-        <span class="info">{{ course.grantsCertification }}</span>
-    </div>
     
-    <div class="input-group">
-        <span class="input-group-text" id="basic-addon1">Editions:</span>
-        <button class="btn btn-info" id="view">View</button>
-        <button class="btn btn-primary" [routerLink]="['/addedition', course.id]">Add</button>
-    </div>
+    <h1 class="title">Dettagli Corso</h1>
 
-    <table class="table table-striped table-hover"
-    style="width: 90%; user-select: none; -moz-user-select: none;">
-    <thead>
-      <tr>
-        <th scope="col">id</th>
-        <th scope="col">code</th>
-        <th scope="col">description</th>
-        <th scope="col"></th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr *ngFor="let e of editions" >
-        <td>{{ e.id }}</td>
-        <td>{{ e.code }}</td>
-        <td>{{ e.description }}</td>
-        <td style="text-align: right;">
-          <div class="btn-group" role="group" aria-label="Basic example">          
-          </div>
-        </td> 
-      </tr>
-    </tbody>
-  </table>
+    <form class="row g-3">
+        <!-- ID -->
+        <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">ID</label>
+            <input type="text" class="form-control" id="inputEmail4" readonly value="{{ course.id }}">
+        </div>
+
+        <!-- NOME -->
+        <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Titolo</label>
+            <input type="text" class="form-control" id="inputPassword4" readonly value="{{ course.title }}">
+        </div>
+
+        <!-- COGNOME -->
+        <div class="col-6">
+            <label for="inputAddress" class="form-label">Descrizione</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" readonly
+                value="{{ course.description }}">
+        </div>
+
+        <!-- NASCITA -->
+        <div class="col-6">
+            <label for="inputAddress2" class="form-label">Durata</label>
+            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor"
+                readonly value="{{ course.duration }}">
+        </div>
+
+        <!-- INDIRIZZO -->
+        <div class="col-md-6">
+            <label for="inputCity" class="form-label">Prezzo Base</label>
+            <input type="text" class="form-control" id="inputCity" readonly value="{{ course.basePrice }}">
+        </div>
+
+        <!-- CITTA' -->
+        <div class="col-md-6">
+            <label for="inputCity" class="form-label">Sommario</label>
+            <input type="text" class="form-control" id="inputCity" readonly value="{{ course.syllabus }}">
+        </div>
+
+        <!-- EMAIL' -->
+        <div class="col-md-3">
+            <label for="inputCity" class="form-label">Livello</label>
+            <input type="text" class="form-control" id="inputCity" readonly value="{{ course.level }}">
+        </div>
+
+        <!-- IMPIEGATO' -->
+        <div class="col-md-3">
+            <label for="inputCity" class="form-label">Area Nome</label>
+            <input type="text" class="form-control" id="inputCity" readonly value="{{ course.areaName }}">
+        </div>
+
+        <div class="col-md-3">
+            <label for="inputCity" class="form-label">Data Creazione</label>
+            <input type="text" class="form-control" id="inputCity" readonly value="{{ course.creationDate }}">
+        </div>
+
+        <div class="col-md-3">
+            <label for="inputCity" class="form-label">Certificato</label>
+            <input type="text" class="form-control" id="inputCity" readonly value="{{ course.grantsCertification }}">
+        </div>
+
+        <div class="col-12">
+            <button class="mybtn" (click)="onBack()">Torna Indietro</button>
+            <button class="mybtn" [routerLink]="['/addedition', course.id]">Aggiung Edizione</button>
+        </div>
+
+
+
+
+    </form>
+
+    
+
+
+
+    <table class="table table-striped table-hover" style="width: 90%; user-select: none; -moz-user-select: none;">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Codice</th>
+                <th scope="col">Data Inizio</th>
+                <th scope="col"></th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let e of editions">
+                <td>{{ e.id }}</td>
+                <td>{{ e.code }}</td>
+                <td>{{ e.startDate }}</td>
+                <td style="text-align: right;">
+                    <div class="btn-group" role="group" aria-label="Basic example">
+                    </div>
+                </td>
+            </tr>
+        </tbody>
+    </table>
+
+
 </div>

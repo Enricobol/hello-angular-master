@@ -16,8 +16,8 @@ export class EditionAddToListComponent implements OnInit {
   editionForm: FormGroup;
   detailsEditions: DetailsEdition[] = [];
   detailsEdition: DetailsEdition = new DetailsEdition;
-  teachers:Teacher[] = [];
-  courses:Course[] = [];
+  teachers: Teacher[] = [];
+  courses: Course[] = [];
   id: number = 0;
 
   constructor(private service: DidactisService, private fb: FormBuilder, private courseService: DidactisService, private router: Router, private route: ActivatedRoute) {
@@ -30,12 +30,12 @@ export class EditionAddToListComponent implements OnInit {
     this.id = Number(this.route.snapshot.paramMap.get('id'));
 
     this.editionForm = this.fb.group({
-      code:         ['', Validators.required],
-      description:  ['', Validators.required],
-      startDate:    ['', Validators.required],
-      realPrice:    ['', Validators.required],
+      code: ['', Validators.required],
+      description: ['', Validators.required],
+      startDate: ['', Validators.required],
+      realPrice: ['', Validators.required],
       instructorId: [0, Validators.required],
-      courseId:     [this.id, Validators.required]
+      courseId: [this.id, Validators.required]
     });
 
     if (this.id != 0) { //Prendi edizione per id
@@ -43,6 +43,7 @@ export class EditionAddToListComponent implements OnInit {
         .subscribe({
           next: de => {
             this.detailsEdition = de;
+            this.displayEdition();
             //console.log(this.course);
           },
           error: err => console.log(err)
@@ -66,10 +67,24 @@ export class EditionAddToListComponent implements OnInit {
       });
   }
 
+  displayEdition(): void {
+    if (this.editionForm) {
+      this.editionForm.reset();
+      this.editionForm.patchValue({
+        code: this.detailsEdition.code,
+        description: this.detailsEdition.description,
+        startDate: this.detailsEdition.startDate,
+        realPrice: this.detailsEdition.realPrice,
+        instructorId: this.detailsEdition.instructorId,
+        courseId: this.detailsEdition.courseId,
+      });
+    }
+  }
+
   //Salvataggio
   save() {
     this.editionForm.value.docenteId = Number(this.editionForm.value.docenteId)
-    this.editionForm.value.corsoId   = Number(this.editionForm.value.corsoId)
+    this.editionForm.value.corsoId = Number(this.editionForm.value.corsoId)
 
     if (this.id == 0) { //CREA EDIZIONE
       this.courseService.createEdition(this.editionForm.value)

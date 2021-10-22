@@ -35,7 +35,7 @@ export class StudentListComponent implements OnInit {
 
   //Conferma Elimina Studente
   clickMethod(id: number) {
-    if(window.confirm("Are you sure to delete "+id)) {
+    if(window.confirm("Sei sicuro di voler eliminare "+id)) {
       console.log(this.remove(id));
     }
   }

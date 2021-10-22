@@ -3,6 +3,8 @@ import { ActivatedRoute, Router } from '@angular/router';
 import { DidactisService } from 'src/app/courses/didactis.service';
 import { DetailsEdition } from 'src/app/DTOs/editionDetails';
 
+//declare bootbox : any;
+
 @Component({
   selector: 'app-edition-details-list',
   templateUrl: './edition-details-list.component.html',

@@ -1,6 +1,7 @@
 export interface CourseEdition{
-    id: number;
-    code:string;
-    description:string;
-    realPrice: number
+    id : number;
+    code : string;
+    courseTitle : string;
+    startDate : string;
+    realPrice : number;
 }

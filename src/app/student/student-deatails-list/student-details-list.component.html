@@ -1,59 +1,74 @@
-
 <div class="student_card" *ngIf="student">
-    <a (click)="onBack()" class="previous">&laquo;</a>
-     
-    <!-- ID -->
-    <div class="input-group">
-        <span class="input-group-text" id="basic-addon1">ID</span>
-        <span class="info"> {{ student.id }}</span>
-    </div>
+   
+    <h1 class="title">Dettagli Studente</h1>
+    
+    
 
-    <!-- NOME -->
-    <div class="input-group">
-        <span class="input-group-text" id="basic-addon1">Nome</span>
-        <span class="info"> {{ student.firstname }}</span>
-    </div>
+    <form class="row g-3">
+        <!-- ID -->
+        <div class="col-md-6">
+            <label for="inputEmail4" class="form-label">ID</label>
+            <input type="text" class="form-control" id="inputEmail4" readonly value="{{student.id}}">
+        </div>
 
-    <!-- COGNOME -->
-    <div class="input-group">
-        <span class="input-group-text" id="basic-addon1">Cognome</span>
-        <span class="info"> {{ student.surname }}</span>
-    </div>
+        <!-- NOME -->
+        <div class="col-md-6">
+            <label for="inputPassword4" class="form-label">Nome</label>
+            <input type="text" class="form-control" id="inputPassword4" readonly value="{{ student.firstname }}">
+        </div>
 
-    <!-- DATA NASCITA -->
-    <div class="input-group">
-        <span class="input-group-text" id="basic-addon1">Data di Nascita</span>
-        <span class="info"> {{ student.dateOfBirth }}</span>
-    </div>
+        <!-- COGNOME -->
+        <div class="col-6">
+            <label for="inputAddress" class="form-label">Cognome</label>
+            <input type="text" class="form-control" id="inputAddress" placeholder="1234 Main St" readonly
+                value="{{ student.surname }}">
+        </div>
 
-    <!-- INDIRIZZO -->
-    <div class="input-group">
-        <span class="input-group-text" id="basic-addon1">Indirizzo</span>
-        <span class="info"> {{ student.address }}</span>
-    </div>
+        <!-- NASCITA -->
+        <div class="col-6">
+            <label for="inputAddress2" class="form-label">Data di Nascita</label>
+            <input type="text" class="form-control" id="inputAddress2" placeholder="Apartment, studio, or floor"
+                readonly value="{{ student.dateOfBirth }}">
+        </div>
 
-    <!-- CITTA -->
-    <div class="input-group">
-        <span class="input-group-text" id="basic-addon1">Città</span>
-        <span class="info"> {{ student.city }}</span>
-    </div>
+        <!-- INDIRIZZO -->
+        <div class="col-md-6">
+            <label for="inputCity" class="form-label">Indirizzo</label>
+            <input type="text" class="form-control" id="inputCity" readonly value="{{student.address}}">
+        </div>
 
-    <!-- EMAIL -->
-    <div class="input-group">
-        <span class="input-group-text" id="basic-addon1">Email</span>
-        <span class="info"> {{ student.email }}</span>
-    </div>
+        <!-- CITTA' -->
+        <div class="col-md-6">
+            <label for="inputCity" class="form-label">Citta</label>
+            <input type="text" class="form-control" id="inputCity" readonly value="{{ student.city }}">
+        </div>
 
-    <!-- TELEFONO -->
-    <div class="input-group">
-        <span class="input-group-text" id="basic-addon1">Telefono</span>
-        <span class="info"> {{student.phoneNumber}}</span>
-    </div>
+        <!-- EMAIL' -->
+        <div class="col-md-4">
+            <label for="inputCity" class="form-label">Email</label>
+            <input type="text" class="form-control" id="inputCity" readonly value="{{ student.email }}">
+        </div>
 
-    <!-- EMPLOYEE -->
-    <div class="input-group">
-        <span class="input-group-text" id="basic-addon1">Impiegato</span>
-        <span class="info"> {{student.isEmployee}}</span>
-    </div>
+        <!-- TELEFONO' -->
+        <div class="col-md-4">
+            <label for="inputCity" class="form-label">Telefono</label>
+            <input type="text" class="form-control" id="inputCity" readonly value="{{ student.phoneNumber }}">
+        </div>
+
+        <!-- IMPIEGATO' -->
+        <div class="col-md-4">
+            <label for="inputCity" class="form-label">Impiegato</label>
+            <input type="text" class="form-control" id="inputCity" readonly value="{{ student.isEmployee }}">
+        </div>
+
+        <div class="col-12">
+            <button class="mybtn"  (click)="onBack()">Torna Indietro</button>
+        </div>
+       
+
+    </form>
+    
+
+    
 
 </div>

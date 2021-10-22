@@ -1,4 +1,5 @@
 <div class="container_addEdition">
+    <h1>Edizione Corso</h1>
     <form novalidate (ngSubmit)="save()" [formGroup]="editionForm">
 
             <!-- Code -->
@@ -45,11 +46,11 @@
                 <option *ngFor="let c of courses" [value]="c.id"> {{ c.title }} </option>
             </select>
 
-            <div class="btn-group" role="group" aria-label="Basic example">
-                <input type="submit" class="btn btn-info"value="invia"
+           
+                <input type="submit" class="btn btn_send"value="invia"
                         [title]="editionForm.valid? 'Crea edizione' : 'Disabilitata finchè i dati non sono corretti'"
                         [disabled]="!editionForm.valid">
-                <button (click)="onBack()" class="btn btn-warning">Indietro</button>
-            </div>
+                <button (click)="onBack()" class="btn btn_back">Indietro</button>
+        
     </form>
 </div>

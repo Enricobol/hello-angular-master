@@ -31,7 +31,7 @@ ngOnInit(): void {
 }
 
 clickMethod(id: number) {
-  if(window.confirm("Are you sure to delete "+id)) {
+  if(window.confirm("Vuoi eliminare Edizione ID: "+id)) {
     console.log(this.remove(id));
   }
 }
